@@ -1,11 +1,31 @@
-<script setup></script>
+<script setup>
+import axios from 'axios'
+import { onMounted, ref } from 'vue'
+
+const weatherList = ref({})
+async function getWeather() {
+  const res = await axios({
+    url: 'https://api.openweathermap.org/data/2.5/weather',
+    params: {
+      lat: 60,
+      lon: 90,
+      appid: '6740be84daed82ecdb95bbda6ed1149b'
+    }
+  })
+  weatherList.value = res.data
+  console.log(res.data);
+}
+onMounted(() => getWeather())
+
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div>
+    <div v-if="weatherList.coord">
+      地理位置:{{ weatherList.coord.lon }},{{ weatherList.coord.lat }}
+    </div>
+    <div v-else>加载中...</div>
+  </div>
 </template>
 
 <style scoped></style>
