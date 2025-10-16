@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import '@/styles/reset.css'
 import App from './App.vue'
 import router from './router'
+
 // element-puls图标库
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 

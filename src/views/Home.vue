@@ -45,11 +45,13 @@
       </div>
     </div>
 
+    <!-- 每日预报卡片 -->
+    <DailyCard/>
   </div>
 </template>
 
 <script setup>
-
+import DailyCard from '@/components/dailyCard.vue';
 </script>
 
 <style scoped>
@@ -86,7 +88,7 @@
 
 .main-display {
   /* position: relative; */
-  height: 800px;
+  height: 600px;
 }
 
 .weather-info-display .up-info {
