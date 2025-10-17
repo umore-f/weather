@@ -1,6 +1,6 @@
 <template>
   <div class="daily">
-    <div id="title">每日预报</div>
+    <div id="title">小时预报</div>
     <div class="nav">
       <ul>
         <li>温度</li>
@@ -64,7 +64,7 @@ onMounted(() => {
           fontSize: 24
         },
         type: 'category',
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'] // X轴数据
+        data: ['8:00', '9:00', '10', '11', '12', '1', '2'] // X轴数据
       },
       yAxis: {
         type: 'value', // Y轴类型
@@ -97,7 +97,6 @@ onMounted(() => {
 .daily {
   background-color: white;
   height: 500px;
-  margin-bottom: 200px;
 }
 
 .nav {

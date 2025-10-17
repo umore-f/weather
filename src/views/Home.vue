@@ -36,22 +36,47 @@
         </div>
         <div class="down-info">
           <ul>
-            <li><p>19度</p><p>体感</p></li>
-            <li><p>5.2米每秒</p><p>风况</p></li>
-            <li><p>4中</p><p>紫外线指数</p></li>
-            <li><p>74%</p><p>相对湿度</p></li>
+            <li>
+              <p>19度</p>
+              <p>体感</p>
+            </li>
+            <li>
+              <p>5.2米每秒</p>
+              <p>风况</p>
+            </li>
+            <li>
+              <p>4中</p>
+              <p>紫外线指数</p>
+            </li>
+            <li>
+              <p>74%</p>
+              <p>相对湿度</p>
+            </li>
           </ul>
         </div>
       </div>
     </div>
 
     <!-- 每日预报卡片 -->
-    <DailyCard/>
+    <DailyCard />
+    <!-- 小时预报卡片 -->
+    <HourCard />
+    <!-- 空气质量卡片 -->
+    <AirQualityCard />
+    <!-- 详情数据 -->
+    <DetailedData />
+    <!-- 数据来源 -->
+     <div class="data-source">
+      数据来自...
+     </div>
   </div>
 </template>
 
 <script setup>
-import DailyCard from '@/components/dailyCard.vue';
+import DailyCard from '@/components/DailyCard.vue';
+import HourCard from '@/components/HourCard.vue';
+import AirQualityCard from '@/components/AirQualityCard.vue';
+import DetailedData from '@/components/DetailedData.vue';
 </script>
 
 <style scoped>
@@ -105,6 +130,7 @@ import DailyCard from '@/components/dailyCard.vue';
 .weather-info-display .up-info {
   margin-bottom: 60px;
 }
+
 .weather-info-display .up-info div:first-child {
   font-size: 120px;
   text-align: center;
@@ -133,19 +159,24 @@ import DailyCard from '@/components/dailyCard.vue';
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .weather-info-display .down-info li:first-child {
   margin-left: 35px;
 }
+
 .weather-info-display .down-info li:last-child {
   margin-right: 35px;
 }
+
 .weather-info-display .down-info li p {
   font-size: 16px;
 }
+
 .weather-info-display .down-info li p:first-child {
   margin-top: 90px;
   text-align: center;
 }
+
 .weather-info-display .down-info li p:last-child {
   text-align: center;
 }
