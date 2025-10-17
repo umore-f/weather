@@ -1,13 +1,17 @@
 <template>
   <div class="air">
-    <div class="left title">空气质量</div>
-    <div class="right title">今日</div>
-    <div class="pie" ref="pieChartContainer"></div>
-    <div class="histogram" ref="histogramContainer"></div>
+    <WeatherInfoCard leftTitle="空气质量" rightTitle="今日">
+      <div class="pie" ref="pieChartContainer"></div>
+      <div class="histogram" ref="histogramContainer"></div>
+    </WeatherInfoCard>
+    <!-- <div class="left title">空气质量</div>
+    <div class="right title">今日</div> -->
+
   </div>
 </template>
 
 <script setup>
+import WeatherInfoCard from './WeatherInfoCard.vue';
 import { ref, onMounted } from 'vue';
 // 引入图表
 import * as echarts from 'echarts';
@@ -79,7 +83,7 @@ onMounted(() => {
 .air {
   background-color: red;
   height: 500px;
-  margin-top: 200px;
+  margin-top: 20px;
   position: relative;
 }
 

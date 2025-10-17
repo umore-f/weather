@@ -1,35 +1,13 @@
 <template>
   <div class="daily">
-    <div id="title">每日预报</div>
-    <div class="nav">
-      <ul>
-        <li>温度</li>
-        <li>空气质量</li>
-        <li>风况</li>
-        <li>紫外线指数</li>
-      </ul>
-    </div>
-    <div id="info">
-      <ul>
-        <li>
-          <div>周一</div>
-          <div>10/13</div>
-          <div class="icno">🌤</div>
-        </li>
-        <li>周二</li>
-        <li>周三</li>
-        <li>周四</li>
-        <li>周五</li>
-        <li>周六</li>
-        <li>周日</li>
-      </ul>
-      <!--  ref="chartContainer" -->
+    <WeatherInfoCard leftTitle="每日预报" isShow=true>
       <div class="chart" ref="chartContainer"></div>
-    </div>
+    </WeatherInfoCard>
   </div>
 </template>
 
 <script setup>
+import WeatherInfoCard from './WeatherInfoCard.vue';
 import { ref, onMounted } from 'vue';
 // 引入图表
 import * as echarts from 'echarts';
@@ -41,10 +19,7 @@ onMounted(() => {
   // 确保容器已挂载
   if (chartContainer.value) {
     // 初始化ECharts实例
-    const myChart = echarts.init(chartContainer.value, {
-      width: 1240,
-      height: 400
-    });
+    const myChart = echarts.init(chartContainer.value);
 
     // 准备图表的配置选项
     const option = {
@@ -68,7 +43,7 @@ onMounted(() => {
       },
       yAxis: {
         type: 'value', // Y轴类型
-        axisLabel:{
+        axisLabel: {
           formatter: '{value} ℃'
         }
       },
@@ -80,9 +55,9 @@ onMounted(() => {
         lineStyle: {
           width: 10,
         },
-        label:{
-          show:true,
-          fontSize:24
+        label: {
+          show: true,
+          fontSize: 24
         }
       }]
     };
@@ -97,18 +72,18 @@ onMounted(() => {
 .daily {
   background-color: white;
   height: 500px;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
 }
 
 .nav {
   height: 40px;
 }
 
-#title {
+/* #title {
   font-size: 24px;
   padding-top: 20px;
   padding-left: 30px;
-}
+} */
 
 .daily ul {
   margin-top: 40px;
@@ -145,10 +120,10 @@ onMounted(() => {
   height: 80px;
 }
 
-#info .chart {
+.chart {
   width: 1200px;
   height: 400px;
-  /* background-color: gainsboro; */
+  /* background-color: red; */
   /* margin-left: 20px; */
 }
 

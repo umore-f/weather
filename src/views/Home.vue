@@ -65,6 +65,8 @@
     <AirQualityCard />
     <!-- 详情数据 -->
     <DetailedData />
+    <!-- test -->
+    <WeatherInfoCard/>
     <!-- 数据来源 -->
      <div class="data-source">
       数据来自...
@@ -73,6 +75,7 @@
 </template>
 
 <script setup>
+import WeatherInfoCard from '@/components/WeatherInfoCard.vue';
 import DailyCard from '@/components/DailyCard.vue';
 import HourCard from '@/components/HourCard.vue';
 import AirQualityCard from '@/components/AirQualityCard.vue';

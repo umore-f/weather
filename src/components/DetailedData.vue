@@ -1,20 +1,21 @@
 <template>
   <div class="detail">
-    <div class="title left">详情数据</div>
-    <div class="title right">1:28下午</div>
-    <div class="info">
-      <ul>
-        <li><img src="@/assets/icno/露点.svg" alt="">露点13℃</li>
-        <li><img src="@/assets/icno/气压.svg" alt="">气压1022毫巴</li>
-        <li><img src="@/assets/icno/能见度.svg" alt="">能见度24.1千米</li>
-        <li><img src="@/assets/icno/云量.svg" alt="">云量100%</li>
-      </ul>
-    </div>
+    <WeatherInfoCard leftTitle="详情数据" rightTitle="下午">
+      <div class="info">
+        <ul>
+          <li><img src="@/assets/icno/露点.svg" alt="">露点13℃</li>
+          <li><img src="@/assets/icno/气压.svg" alt="">气压1022毫巴</li>
+          <li><img src="@/assets/icno/能见度.svg" alt="">能见度24.1千米</li>
+          <li><img src="@/assets/icno/云量.svg" alt="">云量100%</li>
+        </ul>
+      </div>
+    </WeatherInfoCard>
+
   </div>
 </template>
 
 <script setup>
-
+import WeatherInfoCard from './WeatherInfoCard.vue';
 </script>
 
 <style scoped>
@@ -22,12 +23,9 @@
   background-color: burlywood;
   height: 500px;
   position: relative;
+  margin-top: 20px;
 }
 
-.detail .title {
-  font-size: 24px;
-  margin: 30px;
-}
 .detail .info {
   height: 400px;
   background-color: red;
@@ -35,9 +33,11 @@
   top: 100px;
   left: 30px;
 }
+
 .detail ul li {
   margin-bottom: 50px;
 }
+
 .detail ul li:last-child {
   margin-bottom: 0px;
 }
